@@ -31,3 +31,25 @@ The dataset is **fairly balanced**, with all three classes having a similar numb
 Overall, this dataset represents a **multi-class text classification problem**, where the objective is to predict the sentiment of customer messages based on their textual content.
 
 ---
+
+## Task 2: Text Preprocessing
+
+In this step, the raw text data was cleaned and prepared for further processing.
+
+The following preprocessing steps were applied:
+
+- Converted all text to lowercase
+- Removed special characters and punctuation
+- Tokenized the text into individual words
+- Removed common stopwords (e.g., "the", "is", "and")
+- Removed additional non-informative words such as "please", "need", and "tell"
+
+A new column `clean_text` was created, which contains the processed version of the original customer messages.
+
+### Example:
+
+Original:
+"I need information about the payment process."
+
+Cleaned:
+"information payment process"
