@@ -26,9 +26,8 @@ The class distribution is as follows:
 - Negative: 497  
 - Positive: 479  
 
----
-
-
 The dataset is **fairly balanced**, with all three classes having a similar number of samples.
 
 Overall, this dataset represents a **multi-class text classification problem**, where the objective is to predict the sentiment of customer messages based on their textual content.
+
+---
