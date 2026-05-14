@@ -81,3 +81,110 @@ The result is a sparse matrix where:
 
 Machine learning models cannot understand raw text. They only process numerical data.  
 Vectorization converts text into numbers so that models can learn patterns and make predictions.
+
+---
+
+## Task 4: Baseline Model
+
+A baseline model was built using Logistic Regression with TF-IDF features to classify customer sentiment.
+
+### Model Details
+- Algorithm: Logistic Regression
+- Input: TF-IDF feature matrix
+- Output: Sentiment labels (negative, neutral, positive)
+
+### Training Process
+- The dataset was split into training (80%) and testing (20%) sets
+- The model was trained using the training data
+- Predictions were made on the test set
+
+### Evaluation Metrics
+The model was evaluated using:
+- Accuracy score
+- Precision, Recall, and F1-score
+- Confusion matrix
+
+### Results
+
+- **Accuracy:** 1.00
+
+The classification report shows perfect precision, recall, and F1-score across all classes.
+
+The confusion matrix indicates that all predictions were correctly classified, with no misclassifications.
+
+### Observations
+
+The model achieved very high performance, likely due to:
+- Clean and well-structured dataset
+- Distinct patterns between sentiment classes
+- Effective TF-IDF representation
+
+While this indicates strong model performance, such perfect accuracy may not generalize to more complex real-world datasets.
+
+---
+
+## Task 5: Sequence Model (Conceptual Architecture)
+
+A conceptual sequence model using LSTM (Long Short-Term Memory) is proposed to process text data.
+
+### 1. Input Sequence
+
+The input to the model is a sequence of tokenized words from the customer messages.
+
+Example:
+"refund still pending experience frustrating"
+
+After tokenization:
+[12, 45, 78, 23, 91]
+
+Sequences are padded or truncated to a fixed length to ensure uniform input size.
+
+
+### 2. Embedding Layer
+
+The embedding layer converts each word index into a dense vector representation.
+
+- Input: integer sequences
+- Output: dense vectors (e.g., 100-dimensional)
+
+This helps the model capture semantic relationships between words.
+
+
+### 3. Recurrent / Sequence Layer (LSTM)
+
+An LSTM layer processes the sequence step-by-step and captures context.
+
+- Learns dependencies between words
+- Remembers important information over long sequences
+- Handles issues like vanishing gradients better than simple RNNs
+
+Example:
+"refund still pending" → captures negative sentiment pattern
+
+
+### 4. Output Layer
+
+A Dense layer with Softmax activation is used for classification.
+
+- Output size: 3 (negative, neutral, positive)
+- Produces probability distribution across classes
+
+
+### 5. Loss Function
+
+Categorical Cross-Entropy is used as the loss function.
+
+It measures the difference between predicted probabilities and actual labels.
+
+
+### 6. Evaluation Metric
+
+The model is evaluated using:
+
+- Accuracy
+- Precision
+- Recall
+- F1-score
+
+
+To sum up, the LSTM-based model processes sequences of text and captures contextual meaning, making it suitable for sentiment classification tasks where word order and dependencies matter.
