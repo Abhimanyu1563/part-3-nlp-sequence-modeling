@@ -53,3 +53,31 @@ Original:
 
 Cleaned:
 "information payment process"
+
+---
+
+## Task 3: Text Vectorization
+
+The cleaned text data was converted into numerical format using the TF-IDF (Term Frequency–Inverse Document Frequency) technique.
+
+TF-IDF assigns weights to words based on their importance:
+- Words that appear frequently in a document get higher importance
+- Words that appear in many documents get lower importance
+
+This helps the model focus on meaningful and distinguishing words.
+
+The text data was transformed into a feature matrix using:
+- TfidfVectorizer from scikit-learn
+- Maximum features limited to 5000
+
+### Output
+
+The result is a sparse matrix where:
+- Rows represent text samples
+- Columns represent unique words (features)
+- Values represent importance scores
+
+### Why convert text into vectors?
+
+Machine learning models cannot understand raw text. They only process numerical data.  
+Vectorization converts text into numbers so that models can learn patterns and make predictions.
