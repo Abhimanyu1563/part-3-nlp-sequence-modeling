@@ -188,3 +188,53 @@ The model is evaluated using:
 
 
 To sum up, the LSTM-based model processes sequences of text and captures contextual meaning, making it suitable for sentiment classification tasks where word order and dependencies matter.
+
+---
+
+## Task 6: Attention and Transformer Reflection
+
+### Why RNNs struggle with long-term dependencies
+
+Recurrent Neural Networks (RNNs) process text sequentially, passing information from one step to the next. However, as sequences grow longer, earlier information tends to fade due to the vanishing gradient problem. This makes it difficult for RNNs to retain and use information from distant parts of the sequence.
+
+---
+
+### How LSTMs help with memory
+
+LSTMs (Long Short-Term Memory networks) address this limitation by introducing a memory cell and gating mechanisms:
+
+- **Forget gate**: decides what information to discard  
+- **Input gate**: decides what new information to store  
+- **Output gate**: controls what information to pass forward  
+
+These gates allow LSTMs to retain important information over longer sequences and improve performance on tasks requiring context.
+
+---
+
+### What attention solves in sequence-to-sequence tasks
+
+Attention mechanisms allow the model to focus on relevant parts of the input sequence while generating output.
+
+Instead of relying on a single fixed representation, attention dynamically assigns weights to different words in the input.
+
+This helps:
+- Capture important context
+- Improve translation and summarization
+- Handle long sequences more effectively
+
+---
+
+### Why transformers are important in modern NLP and Generative AI
+
+Transformers replace sequential processing with parallel computation using self-attention mechanisms.
+
+Key advantages:
+- Capture long-range dependencies efficiently
+- Faster training due to parallelization
+- Better performance on large datasets
+
+Transformers form the foundation of modern NLP models such as:
+- BERT
+- GPT
+
+They are widely used in tasks like text generation, translation, chatbots, and large language models.
